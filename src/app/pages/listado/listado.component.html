@@ -1,0 +1,73 @@
+<!-- Header -->
+<header class="header">
+    <div class="header-container">
+        <h1 class="logo"><span class="logo-bike">Bike</span>Rent</h1>
+        <nav class="nav">
+            <a href="#inicio">INICIO</a>
+            <a href="#motos">MOTOS</a>
+            <a href="#como-funciona">CÓMO FUNCIONA</a>
+            <a href="#contacto">CONTACTO</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Search Bar -->
+<section class="search-section">
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" placeholder="Buscar moto...">
+        </div>
+
+        <select class="filter-select">
+            <option>Tipo de moto</option>
+            <option>Naked</option>
+            <option>Deportiva</option>
+            <option>Trail</option>
+            <option>Clásica</option>
+            <option>Scooter</option>
+        </select>
+
+        <input type="date" class="filter-input" placeholder="Fecha inicio">
+
+        <input type="date" class="filter-input" placeholder="Fecha fin">
+
+        <button class="btn-search">Buscar</button>
+    </div>
+</section>
+
+<!-- Motos Grid -->
+<section class="motos-section">
+    <div class="motos-container">
+        <div class="moto-card" *ngFor="let moto of motos">
+            <div class="moto-image">
+                <img [src]="moto.imagen" [alt]="moto.nombre">
+            </div>
+
+            <div class="moto-info">
+                <h3 class="moto-nombre">{{ moto.nombre }}</h3>
+                <p class="moto-tipo">{{ moto.tipo }}</p>
+
+                <div class="moto-specs">
+                    <span class="spec">
+                        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <path d="M12 8v4m0 4v.01"></path>
+                        </svg>
+                        {{ moto.cc }} cc
+                    </span>
+                    <span class="spec" *ngFor="let caract of moto.caracteristicas">
+                        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <path d="M12 8v4m0 4v.01"></path>
+                        </svg>
+                        {{ caract }}
+                    </span>
+                </div>
+
+                <p class="moto-precio">{{ moto.precio }} € / día</p>
+
+                <button class="btn-detalles" (click)="verDetalles(moto.id)">Ver detalles</button>
+            </div>
+        </div>
+    </div>
+</section>

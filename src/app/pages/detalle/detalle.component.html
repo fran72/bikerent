@@ -1,0 +1,133 @@
+<!-- Header -->
+<header class="header">
+    <div class="header-container">
+        <h1 class="logo"><span class="logo-bike">Bike</span>Rent</h1>
+        <nav class="nav">
+            <a href="#inicio">INICIO</a>
+            <a href="#motos">MOTOS</a>
+            <a href="#como-funciona">CÓMO FUNCIONA</a>
+            <a href="#contacto">CONTACTO</a>
+        </nav>
+    </div>
+</header>
+
+<div class="detalle-container" *ngIf="moto">
+    <!-- Galería de imágenes -->
+    <div class="galeria-section">
+        <div class="imagen-principal">
+            <img [src]="moto.imagen" [alt]="moto.nombre">
+        </div>
+    </div>
+
+    <!-- Info Principal -->
+    <div class="info-principal">
+        <h1 class="titulo">{{ moto.nombre }}</h1>
+
+        <div class="precio-section">
+            <div class="precio-actual">
+                <span class="valor">{{ moto.precio | number: '1.2-2' }}€</span>
+                <span class="periodo">/día</span>
+            </div>
+
+            <div class="precio-original">
+                <span class="descuento">{{ moto.precioDescuento }}€</span>
+                <span class="ahorro">Ahorro {{ moto.ahorro }}€</span>
+            </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="badges">
+            <span class="badge badge-tipo">{{ moto.tipo }}</span>
+            <span class="badge badge-cc">{{ moto.cc }} cc</span>
+            <span class="badge badge-abs">A2</span>
+        </div>
+
+        <!-- Propietario -->
+        <div class="propietario-section">
+            <div class="propietario-header">
+                <h3>Propietario</h3>
+                <button class="btn-contacto">Contactar</button>
+            </div>
+
+            <div class="propietario-info">
+                <img [src]="moto.propietario.imagen" [alt]="moto.propietario.nombre" class="propietario-imagen">
+                <div class="propietario-datos">
+                    <p class="propietario-nombre">
+                        {{ moto.propietario.nombre }}
+                        <span class="verificado" *ngIf="moto.propietario.verificado">✓</span>
+                    </p>
+                    <p class="propietario-fecha">{{ moto.propietario.desde }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Descripción -->
+    <div class="descripcion-section">
+        <h3>Descripción</h3>
+        <p>{{ moto.descripcion }}</p>
+    </div>
+
+    <!-- Características -->
+    <div class="caracteristicas-section">
+        <h3>Características</h3>
+        <div class="caracteristicas-grid">
+            <div class="caracteristica-item" *ngFor="let caract of moto.caracteristicas">
+                <span class="icono" [class.si]="caract.icono === '✓'" [class.no]="caract.icono === '✗'">
+                    {{ caract.icono }}
+                </span>
+                <span class="nombre">{{ caract.nombre }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluido en el precio -->
+    <div class="incluido-section">
+        <h3>Incluido en el precio</h3>
+        <ul class="incluido-list">
+            <li *ngFor="let item of moto.incluidoEnPrecio">
+                <span class="check">✓</span>
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+
+    <!-- Extras y Accesorios -->
+    <div class="extras-section">
+        <h3>Extras y accesorios</h3>
+        <div class="extras-grid">
+            <div class="extra-item" *ngFor="let extra of moto.extrasYAccesorios">
+                <span class="icono">📦</span>
+                <p>{{ extra }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Horarios -->
+    <div class="horarios-section">
+        <h3>Horarios</h3>
+        <div class="horarios-grid">
+            <div class="horario-item">
+                <label>Desde</label>
+                <select>
+                    <option>{{ moto.horaInicio }}</option>
+                </select>
+            </div>
+            <div class="horario-item">
+                <label>Hasta</label>
+                <select>
+                    <option>{{ moto.horaFin }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de reserva -->
+    <div class="reserva-section">
+        <button class="btn-reservar" (click)="reservarAhora()">Reservar ahora</button>
+    </div>
+</div>
+
+<div class="moto-no-encontrada" *ngIf="!moto">
+    <p>Moto no encontrada</p>
+</div>
