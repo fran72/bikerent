@@ -1,0 +1,102 @@
+<!-- Header -->
+<header class="header">
+    <div class="header-container">
+        <img src="assets/logo.png" alt="BikeRent" class="logo">
+        <nav class="nav">
+            <!-- <a routerLink="/motos" routerLinkActive="active">INICIO</a> -->
+            <a routerLink="/motos" routerLinkActive="active">MOTOS</a>
+            <a routerLink="/como-funciona" routerLinkActive="active">CÓMO FUNCIONA</a>
+            <a routerLink="/contacto" routerLinkActive="active">CONTACTO</a>
+        </nav>
+    </div>
+</header>
+
+<div class="contacto-container">
+    <!-- Hero Section -->
+    <!-- <section class="hero-section">
+        <div class="hero-content">
+            <h1>Contacto</h1>
+            <p>¿Tienes alguna pregunta? Nos encantaría escucharte</p>
+        </div>
+    </section> -->
+
+    <!-- Formulario Section -->
+    <section class="formulario-section">
+        <div class="container">
+            <div class="formulario-wrapper">
+                <h2 class="formulario-titulo">ENVÍANOS UN MENSAJE</h2>
+
+                <div class="mensaje-exito" *ngIf="enviado" [@fadeInOut]>
+                    <span class="icono-exito">✓</span>
+                    <p>¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.</p>
+                </div>
+
+                <form (ngSubmit)="enviarMensaje()" class="formulario">
+                    <!-- Nombre -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" [(ngModel)]="form.nombre" name="nombre"
+                            placeholder="Tu nombre..." required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" [(ngModel)]="form.email" name="email" placeholder="tu@email.com"
+                            required>
+                    </div>
+
+                    <!-- Mensaje -->
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" [(ngModel)]="form.mensaje" name="mensaje"
+                            placeholder="Cuéntanos tu proyecto..." rows="6" required></textarea>
+                    </div>
+
+                    <!-- Botón Enviar -->
+                    <button type="submit" class="btn-enviar" [disabled]="cargando">
+                        {{ cargando ? 'ENVIANDO...' : 'ENVIAR MENSAJE' }}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Contacto -->
+    <section class="info-contacto-section">
+        <div class="container">
+            <h2 class="section-title">Otras formas de contactarnos</h2>
+
+            <div class="contacto-info-grid">
+                <div class="contacto-info-item">
+                    <div class="icono">📧</div>
+                    <h3>Correo Electrónico</h3>
+                    <p><a href="mailto:info@bikerent.com">info&#64;bikerent.com</a></p>
+                    <!-- <p><a href="mailto:info@bikerent.com">info@bikerent.com</a></p> -->
+                    <p class="subtexto">Respuesta en 24 horas</p>
+                </div>
+
+                <div class="contacto-info-item">
+                    <div class="icono">📱</div>
+                    <h3>Teléfono</h3>
+                    <p><a href="tel:+34600123456">+34 600 123 456</a></p>
+                    <p class="subtexto">Disponible 24/7</p>
+                </div>
+
+                <div class="contacto-info-item">
+                    <div class="icono">📍</div>
+                    <h3>Ubicación</h3>
+                    <p>Madrid, España</p>
+                    <p class="subtexto">Múltiples puntos de recogida</p>
+                </div>
+
+                <div class="contacto-info-item">
+                    <div class="icono">⏰</div>
+                    <h3>Horario</h3>
+                    <p>Lun - Dom: 8:00 - 22:00</p>
+                    <p class="subtexto">Soporte 24/7 disponible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

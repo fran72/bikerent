@@ -1,0 +1,448 @@
+// Header
+.header {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        height: 60px;
+        max-width: 300px;
+        object-fit: contain;
+    }
+
+    .nav {
+        display: flex;
+        gap: 2rem;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+
+            &:hover,
+            &.active {
+                color: #007bff;
+            }
+        }
+    }
+}
+
+.como-funciona-container {
+    background: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// Hero Section
+.hero-section {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 0;
+            opacity: 0.95;
+        }
+    }
+}
+
+// Proceso Section
+.proceso-section {
+    padding: 60px 20px;
+    background: #fff;
+
+    .section-title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 0 50px 0;
+        color: #1a1a1a;
+    }
+
+    .pasos-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        position: relative;
+    }
+
+    .paso-card {
+        background: #f9f9f9;
+        border-radius: 12px;
+        padding: 30px 20px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .paso-numero {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: #007bff;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+        }
+
+        .paso-contenido {
+            padding-top: 15px;
+
+            .paso-icono {
+                font-size: 48px;
+                margin-bottom: 16px;
+            }
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                margin: 12px 0;
+                color: #1a1a1a;
+            }
+
+            p {
+                font-size: 14px;
+                color: #666;
+                margin: 0;
+                line-height: 1.6;
+            }
+        }
+
+        .paso-linea {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background: #fff;
+        }
+
+        &:last-child .paso-linea {
+            display: none;
+        }
+    }
+}
+
+// Seguros Section
+.seguros-section {
+    padding: 60px 20px;
+    background: #f9f9f9;
+
+    .section-title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 0 50px 0;
+        color: #1a1a1a;
+    }
+
+    .seguros-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+
+    .opcion-seguro {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border: 2px solid transparent;
+        transition: all 0.3s;
+
+        &:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        &.destacado {
+            border-color: #007bff;
+            box-shadow: 0 8px 24px rgba(0, 123, 255, 0.2);
+
+            .opcion-header {
+                h3 {
+                    color: #007bff;
+                }
+            }
+        }
+
+        .opcion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #f0f0f0;
+
+            h3 {
+                font-size: 22px;
+                font-weight: 600;
+                margin: 0;
+                color: #1a1a1a;
+            }
+
+            .badge {
+                background: #e3f2fd;
+                color: #007bff;
+                padding: 6px 12px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 600;
+                white-space: nowrap;
+
+                &.badge-recomendado {
+                    background: #fff3cd;
+                    color: #ff7f00;
+                }
+            }
+        }
+
+        .opcion-contenido {
+            .beneficios-list {
+                list-style: none;
+                margin: 0 0 20px 0;
+                padding: 0;
+
+                li {
+                    font-size: 14px;
+                    color: #333;
+                    margin-bottom: 12px;
+                    line-height: 1.6;
+                    font-weight: 500;
+                }
+            }
+
+            .opcion-descripcion {
+                font-size: 14px;
+                color: #666;
+                line-height: 1.6;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Ventajas Section
+.ventajas-section {
+    padding: 60px 20px;
+    background: #fff;
+
+    .section-title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 0 50px 0;
+        color: #1a1a1a;
+    }
+
+    .ventajas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .ventaja-item {
+        text-align: center;
+        padding: 30px 20px;
+        background: #f9f9f9;
+        border-radius: 12px;
+        transition: all 0.3s;
+
+        &:hover {
+            background: #f0f0f0;
+            transform: translateY(-5px);
+        }
+
+        .ventaja-icono {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 12px 0;
+            color: #1a1a1a;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+    }
+}
+
+// CTA Section
+.cta-section {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+
+    .cta-contenido {
+        max-width: 600px;
+        margin: 0 auto;
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 0 0 30px 0;
+            opacity: 0.95;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: #fff;
+            color: #007bff;
+            padding: 14px 40px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+
+            &:hover {
+                background: #f0f0f0;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .header {
+        .header-container {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .nav {
+            gap: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .logo {
+            height: 80px;
+            max-width: 250px;
+        }
+    }
+
+    .hero-section {
+        padding: 40px 20px;
+
+        .hero-content {
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .proceso-section {
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .pasos-container {
+            gap: 20px;
+        }
+
+        .paso-card {
+            padding: 25px 15px;
+
+            .paso-contenido .paso-icono {
+                font-size: 40px;
+            }
+        }
+    }
+
+    .seguros-section {
+        .seguros-grid {
+            gap: 20px;
+        }
+
+        .opcion-seguro {
+            padding: 20px;
+        }
+    }
+
+    .ventajas-section {
+        .ventaja-item {
+            padding: 20px 15px;
+
+            .ventaja-icono {
+                font-size: 40px;
+            }
+        }
+    }
+
+    .cta-section {
+        padding: 40px 20px;
+
+        .cta-contenido {
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}

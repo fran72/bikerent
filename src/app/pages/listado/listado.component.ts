@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 interface Moto {
   id: number;
@@ -14,7 +14,7 @@ interface Moto {
 
 @Component({
   selector: 'app-listado',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './listado.component.html',
   styleUrl: './listado.component.scss'
 })

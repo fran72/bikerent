@@ -1,0 +1,139 @@
+<!-- Header -->
+<header class="header">
+    <div class="header-container">
+        <img src="assets/logo.png" alt="BikeRent" class="logo">
+        <nav class="nav">
+            <!-- <a routerLink="/motos" routerLinkActive="active">INICIO</a> -->
+            <a routerLink="/motos" routerLinkActive="active">MOTOS</a>
+            <a routerLink="/como-funciona" routerLinkActive="active">CÓMO FUNCIONA</a>
+            <a routerLink="/contacto" routerLinkActive="active">CONTACTO</a>
+        </nav>
+    </div>
+</header>
+
+<div class="como-funciona-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>¿Cómo funciona BikeRent?</h1>
+            <p>Un proceso simple y seguro para alquilar la moto de tus sueños</p>
+        </div>
+    </section>
+
+    <!-- Proceso de alquiler -->
+    <section class="proceso-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro proceso en 6 pasos</h2>
+
+            <div class="pasos-container">
+                <div class="paso-card" *ngFor="let paso of pasos; let i = index">
+                    <div class="paso-numero">
+                        <span>{{ paso.numero }}</span>
+                    </div>
+                    <div class="paso-contenido">
+                        <div class="paso-icono">{{ paso.icono }}</div>
+                        <h3>{{ paso.titulo }}</h3>
+                        <p>{{ paso.descripcion }}</p>
+                    </div>
+                    <div class="paso-linea" *ngIf="i < pasos.length - 1"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información sobre seguros -->
+    <section class="seguros-section">
+        <div class="container">
+            <h2 class="section-title">Seguro en Cleverea</h2>
+
+            <div class="seguros-grid">
+                <div class="opcion-seguro">
+                    <div class="opcion-header">
+                        <h3>Contrátalo tú</h3>
+                        <span class="badge">Ahorra dinero</span>
+                    </div>
+                    <div class="opcion-contenido">
+                        <ul class="beneficios-list">
+                            <li>✓ Tienes el control total</li>
+                            <li>✓ Elige el tipo de seguro que prefieres</li>
+                            <li>✓ Más económico</li>
+                            <li>✓ Puedes asegurar solo los días que rentes</li>
+                        </ul>
+                        <p class="opcion-descripcion">
+                            Contrata directamente en Cleverea el seguro para los días de tu alquiler.
+                            Recibirás un código que validarás en nuestra plataforma.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="opcion-seguro destacado">
+                    <div class="opcion-header">
+                        <h3>Nosotros lo hacemos</h3>
+                        <span class="badge badge-recomendado">Recomendado</span>
+                    </div>
+                    <div class="opcion-contenido">
+                        <ul class="beneficios-list">
+                            <li>✓ Todo incluido y sin complicaciones</li>
+                            <li>✓ Seguro óptimo ya configurado</li>
+                            <li>✓ Soporte 24/7 en tu idioma</li>
+                            <li>✓ Una sola plataforma para todo</li>
+                        </ul>
+                        <p class="opcion-descripcion">
+                            Nosotros gestionamos el seguro en Cleverea por ti.
+                            Solo reserva en BikeRent y listo, ¡tu moto y seguro están cubiertos!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventajas de BikeRent -->
+    <section class="ventajas-section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir BikeRent?</h2>
+
+            <div class="ventajas-grid">
+                <div class="ventaja-item">
+                    <div class="ventaja-icono">🔒</div>
+                    <h3>Seguro y confiable</h3>
+                    <p>Propietarios verificados y pagos seguros con protección de buyer</p>
+                </div>
+                <div class="ventaja-item">
+                    <div class="ventaja-icono">🚀</div>
+                    <h3>Rápido y fácil</h3>
+                    <p>Reserva en minutos y disfruta tu aventura sin trámites complicados</p>
+                </div>
+                <div class="ventaja-item">
+                    <div class="ventaja-icono">💰</div>
+                    <h3>Precios competitivos</h3>
+                    <p>Elige entre miles de motos y compara precios para encontrar la mejor oferta</p>
+                </div>
+                <div class="ventaja-item">
+                    <div class="ventaja-icono">📞</div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Contacta con nosotros en cualquier momento durante tu alquiler</p>
+                </div>
+                <div class="ventaja-item">
+                    <div class="ventaja-icono">🌍</div>
+                    <h3>A nivel mundial</h3>
+                    <p>Alquila motos en múltiples ubicaciones y países</p>
+                </div>
+                <div class="ventaja-item">
+                    <div class="ventaja-icono">⭐</div>
+                    <h3>Comunidad de confianza</h3>
+                    <p>Lee opiniones reales de usuarios y elige con confianza</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Llamada a la acción -->
+    <section class="cta-section">
+        <div class="cta-contenido">
+            <h2>¿Listo para tu próxima aventura?</h2>
+            <p>Encuentra la moto perfecta y comienza tu viaje hoy</p>
+            <a href="/motos" class="btn-cta">Explorar motos</a>
+        </div>
+    </section>
+</div>

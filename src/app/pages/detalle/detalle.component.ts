@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 interface Propietario {
@@ -38,7 +38,7 @@ interface MotoDetalle {
 
 @Component({
     selector: 'app-detalle',
-    imports: [CommonModule],
+    imports: [CommonModule, RouterModule],
     templateUrl: './detalle.component.html',
     styleUrl: './detalle.component.scss'
 })
