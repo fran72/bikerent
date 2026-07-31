@@ -152,6 +152,207 @@ export class DetalleComponent implements OnInit {
             horaInicio: '09:00',
             horaFin: '21:00',
             fechaDisponibleDesde: '2024-09-05'
+        },
+        3: {
+            id: 3,
+            nombre: 'BMW F 750 GS',
+            modelo: 'BMW F 750 GS',
+            precio: 75.00,
+            precioBase: 75.00,
+            precioDescuento: 70,
+            ahorro: 0,
+            imagen: 'https://www.outletmoto.com/cdnassets/products/shad-anclaje-w0fs88st_l.jpg',
+            cc: 853,
+            tipo: 'Trail',
+            descripcion: 'Moto trail de aventura BMW F 750 GS. Perfecta para viajes largos y terrain variado.',
+            propietario: {
+                nombre: 'María L.',
+                verificado: true,
+                desde: 'Miembro desde 2021',
+                imagen: 'https://via.placeholder.com/50'
+            },
+            caracteristicas: [
+                {
+                    nombre: 'ABS',
+                    valor: '',
+                    icono: '✓'
+                },
+                {
+                    nombre: 'Maleteros incluidos',
+                    valor: '',
+                    icono: '✓'
+                },
+                {
+                    nombre: 'Control de tracción',
+                    valor: '',
+                    icono: '✓'
+                }
+            ],
+            incluidoEnPrecio: [
+                'Seguro aventura',
+                'Protección reembolsable',
+                'Asistencia 24/7',
+                'Maleteros'
+            ],
+            extrasYAccesorios: [
+                'Casco modular',
+                'Botas de moto',
+                'Chaqueta de aventura',
+                'GPS'
+            ],
+            horaInicio: '08:00',
+            horaFin: '22:00',
+            fechaDisponibleDesde: '2024-09-10'
+        },
+        4: {
+            id: 4,
+            nombre: 'Triumph Street Twin',
+            modelo: 'Triumph Street Twin',
+            precio: 55.00,
+            precioBase: 55.00,
+            precioDescuento: 50,
+            ahorro: 0,
+            imagen: 'https://www.motoplanete.com/triumph/zoom-700px/Triumph-900-Street-Twin-2022-700px.webp',
+            cc: 900,
+            tipo: 'Clásica',
+            descripcion: 'Triumph Street Twin retro clásica. Un diseño icónico con tecnología moderna.',
+            propietario: {
+                nombre: 'Antonio R.',
+                verificado: true,
+                desde: 'Miembro desde 2019',
+                imagen: 'https://via.placeholder.com/50'
+            },
+            caracteristicas: [
+                {
+                    nombre: 'ABS',
+                    valor: '',
+                    icono: '✓'
+                },
+                {
+                    nombre: 'Diseño retro',
+                    valor: '',
+                    icono: '✓'
+                },
+                {
+                    nombre: 'Fácil de manejar',
+                    valor: '',
+                    icono: '✓'
+                }
+            ],
+            incluidoEnPrecio: [
+                'Seguro clásico',
+                'Protección reembolsable',
+                'Asistencia 24/7'
+            ],
+            extrasYAccesorios: [
+                'Casco retro',
+                'Guantes vintage',
+                'Alforjas de cuero',
+                'Espejo adicional'
+            ],
+            horaInicio: '09:00',
+            horaFin: '20:00',
+            fechaDisponibleDesde: '2024-09-08'
+        },
+        5: {
+            id: 5,
+            nombre: 'Honda PCX 125',
+            modelo: 'Honda PCX 125',
+            precio: 38.00,
+            precioBase: 38.00,
+            precioDescuento: 35,
+            ahorro: 0,
+            imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Honda_PCX125_2011_Front.JPG/960px-Honda_PCX125_2011_Front.JPG',
+            cc: 125,
+            tipo: 'Scooter',
+            descripcion: 'Honda PCX 125 scooter compacto y económico. Ideal para la ciudad.',
+            propietario: {
+                nombre: 'Juan P.',
+                verificado: true,
+                desde: 'Miembro desde 2022',
+                imagen: 'https://via.placeholder.com/50'
+            },
+            caracteristicas: [
+                {
+                    nombre: 'Fácil de aparcar',
+                    valor: '',
+                    icono: '✓'
+                },
+                {
+                    nombre: 'Bajo consumo',
+                    valor: '',
+                    icono: '✓'
+                },
+                {
+                    nombre: 'CBS (Frenos)',
+                    valor: '',
+                    icono: '✓'
+                }
+            ],
+            incluidoEnPrecio: [
+                'Seguro urbano',
+                'Protección reembolsable',
+                'Asistencia 24/7'
+            ],
+            extrasYAccesorios: [
+                'Casco compacto',
+                'Bolsa de transporte',
+                'Soporte de móvil',
+                'Espejo adicional'
+            ],
+            horaInicio: '07:00',
+            horaFin: '23:00',
+            fechaDisponibleDesde: '2024-09-01'
+        },
+        6: {
+            id: 6,
+            nombre: 'Yamaha XMAX 250',
+            modelo: 'Yamaha XMAX 250',
+            precio: 42.00,
+            precioBase: 42.00,
+            precioDescuento: 35,
+            ahorro: 0,
+            imagen: 'https://www.motofichas.com/images/stories/imagenes/pruebas/yamaha_xmax_250/yamaha-xmax-250-2010-2.jpg',
+            cc: 250,
+            tipo: 'Scooter',
+            descripcion: 'Yamaha XMAX 250 scooter deportivo. Más potencia y confort para trayectos largos.',
+            propietario: {
+                nombre: 'Sofia T.',
+                verificado: true,
+                desde: 'Miembro desde 2020',
+                imagen: 'https://via.placeholder.com/50'
+            },
+            caracteristicas: [
+                {
+                    nombre: 'Mayor potencia',
+                    valor: '',
+                    icono: '✓'
+                },
+                {
+                    nombre: 'Asiento cómodo',
+                    valor: '',
+                    icono: '✓'
+                },
+                {
+                    nombre: 'CBS (Frenos)',
+                    valor: '',
+                    icono: '✓'
+                }
+            ],
+            incluidoEnPrecio: [
+                'Seguro deportivo',
+                'Protección reembolsable',
+                'Asistencia 24/7'
+            ],
+            extrasYAccesorios: [
+                'Casco deportivo',
+                'Bolsa de transporte grande',
+                'Soporte de móvil premium',
+                'Espejo panorámico'
+            ],
+            horaInicio: '07:00',
+            horaFin: '23:00',
+            fechaDisponibleDesde: '2024-09-03'
         }
     };
 

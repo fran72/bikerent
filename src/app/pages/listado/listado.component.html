@@ -1,9 +1,9 @@
 <!-- Header -->
 <header class="header">
     <div class="header-container">
-        <h1 class="logo"><span class="logo-bike">Bike</span>Rent</h1>
+        <img src="assets/logo.png" alt="BikeRent" class="logo">
         <nav class="nav">
-            <a href="#inicio">INICIO</a>
+            <!-- <a href="#inicio">INICIO</a> -->
             <a href="#motos">MOTOS</a>
             <a href="#como-funciona">CÓMO FUNCIONA</a>
             <a href="#contacto">CONTACTO</a>
@@ -45,7 +45,7 @@
 
             <div class="moto-info">
                 <h3 class="moto-nombre">{{ moto.nombre }}</h3>
-                <p class="moto-tipo">{{ moto.tipo }}</p>
+                <!-- <p class="moto-tipo">{{ moto.tipo }}</p> -->
 
                 <div class="moto-specs">
                     <span class="spec">
@@ -53,15 +53,22 @@
                             <circle cx="12" cy="12" r="1"></circle>
                             <path d="M12 8v4m0 4v.01"></path>
                         </svg>
+                        {{ moto.tipo }}
+                    </span>
+                    <span class="spec">
+                        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <path d="M12 8v4m0 4v.01"></path>
+                        </svg>
                         {{ moto.cc }} cc
                     </span>
-                    <span class="spec" *ngFor="let caract of moto.caracteristicas">
+                    <!-- <span class="spec" *ngFor="let caract of moto.caracteristicas">
                         <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="1"></circle>
                             <path d="M12 8v4m0 4v.01"></path>
                         </svg>
                         {{ caract }}
-                    </span>
+                    </span> -->
                 </div>
 
                 <p class="moto-precio">{{ moto.precio }} € / día</p>

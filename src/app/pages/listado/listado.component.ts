@@ -64,6 +64,15 @@ export class ListadoComponent {
       cc: 125,
       caracteristicas: ['CBS'],
       precio: 35
+    },
+    {
+      id: 6,
+      nombre: 'Yamaha XMAX 250',
+      tipo: 'Scooter',
+      imagen: 'https://www.motofichas.com/images/stories/imagenes/pruebas/yamaha_xmax_250/yamaha-xmax-250-2010-2.jpg',
+      cc: 250,
+      caracteristicas: ['CBS'],
+      precio: 35
     }
   ];
 
