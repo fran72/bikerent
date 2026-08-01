@@ -43,7 +43,8 @@
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 900px;
+    width: 80%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -77,16 +78,46 @@
 // Formulario Section
 .formulario-section {
     padding: 60px 20px;
-    background-color: #0066ff;
+    background-image: url('../../../assets/form-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        padding: 40px 20px;
+        min-height: auto;
+        background-attachment: scroll;
+    }
+
+    @media (max-width: 480px) {
+        padding: 30px 15px;
+    }
 
     .formulario-wrapper {
-        max-width: 700px;
+        max-width: 900px;
         margin: 0 auto;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.98);
         padding: 40px;
         border-radius: 16px;
         border: 1px solid #e0e0e0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        width: 100%;
+
+        @media (max-width: 768px) {
+            padding: 30px 24px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 480px) {
+            padding: 24px 16px;
+            border-radius: 12px;
+        }
 
         .formulario-titulo {
             text-align: center;
@@ -95,6 +126,16 @@
             color: #007bff;
             margin: 0 0 30px 0;
             letter-spacing: 0.5px;
+
+            @media (max-width: 768px) {
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
         }
 
         .mensaje-exito {
@@ -147,6 +188,10 @@
         font-size: 14px;
         font-weight: 600;
         color: #1a1a1a;
+
+        @media (max-width: 480px) {
+            font-size: 13px;
+        }
     }
 
     input,
@@ -157,6 +202,12 @@
         font-size: 14px;
         font-family: inherit;
         transition: all 0.3s;
+
+        @media (max-width: 480px) {
+            padding: 10px 12px;
+            font-size: 16px;
+            border-radius: 6px;
+        }
 
         &::placeholder {
             color: #999;
@@ -177,6 +228,14 @@
         resize: vertical;
         min-height: 140px;
         font-size: 14px;
+
+        @media (max-width: 768px) {
+            min-height: 120px;
+        }
+
+        @media (max-width: 480px) {
+            min-height: 100px;
+        }
     }
 }
 
@@ -194,6 +253,13 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-top: 8px;
+    width: 100%;
+
+    @media (max-width: 480px) {
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
 
     &:hover:not(:disabled) {
         background: #e67e00;
