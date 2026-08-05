@@ -3,7 +3,7 @@
     <div class="header-container">
         <img src="assets/logo.png" alt="BikeRent" class="logo">
         <nav class="nav">
-            <a routerLink="/motos" routerLinkActive="active">INICIO</a>
+            <!-- <a routerLink="/motos" routerLinkActive="active">INICIO</a> -->
             <a routerLink="/motos" routerLinkActive="active">MOTOS</a>
             <a routerLink="/como-funciona" routerLinkActive="active">CÓMO FUNCIONA</a>
             <a routerLink="/contacto" routerLinkActive="active">CONTACTO</a>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="precio-original">
-                <span class="descuento">{{ moto.precioDescuento }}€</span>
+                <span class="descuento">{{ moto.precioBase }}€</span>
                 <span class="ahorro">Ahorro {{ moto.ahorro }}€</span>
             </div>
         </div>
@@ -43,7 +43,7 @@
         </div>
 
         <!-- Propietario -->
-        <div class="propietario-section">
+        <!-- <div class="propietario-section">
             <div class="propietario-header">
                 <h3>Propietario</h3>
                 <button class="btn-contacto">Contactar</button>
@@ -59,7 +59,7 @@
                     <p class="propietario-fecha">{{ moto.propietario.desde }}</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <!-- Descripción -->
@@ -97,8 +97,8 @@
         <h3>Extras y accesorios</h3>
         <div class="extras-grid">
             <div class="extra-item" *ngFor="let extra of moto.extrasYAccesorios">
-                <span class="icono">📦</span>
-                <p>{{ extra }}</p>
+                <i [ngClass]="extra.icono" class="icono"></i>
+                <p>{{ extra.nombre }}</p>
             </div>
         </div>
     </div>
@@ -110,13 +110,14 @@
             <div class="horario-item">
                 <label>Desde</label>
                 <select>
-                    <option>{{ moto.horaInicio }}</option>
+                    <option *ngFor="let hora of horasDisponibles" [selected]="hora === moto.horaInicio">{{ hora }}
+                    </option>
                 </select>
             </div>
             <div class="horario-item">
                 <label>Hasta</label>
                 <select>
-                    <option>{{ moto.horaFin }}</option>
+                    <option *ngFor="let hora of horasDisponibles" [selected]="hora === moto.horaFin">{{ hora }}</option>
                 </select>
             </div>
         </div>

@@ -15,6 +15,11 @@ interface CaracteristicaDetalle {
     icono: string;
 }
 
+interface Extra {
+    nombre: string;
+    icono: string;
+}
+
 interface MotoDetalle {
     id: number;
     nombre: string;
@@ -30,7 +35,7 @@ interface MotoDetalle {
     propietario: Propietario;
     caracteristicas: CaracteristicaDetalle[];
     incluidoEnPrecio: string[];
-    extrasYAccesorios: string[];
+    extrasYAccesorios: Extra[];
     horaInicio: string;
     horaFin: string;
     fechaDisponibleDesde: string;
@@ -44,6 +49,7 @@ interface MotoDetalle {
 })
 export class DetalleComponent implements OnInit {
     moto: MotoDetalle | null = null;
+    horasDisponibles: string[] = [];
 
     // Mock data
     private motos: { [key: number]: MotoDetalle } = {
@@ -52,9 +58,9 @@ export class DetalleComponent implements OnInit {
             nombre: 'Yamaha MT 07 A2 ABS',
             modelo: 'Yamaha MT 07',
             precio: 210.82,
-            precioBase: 212.50,
+            precioBase: 279.99,
             precioDescuento: 53,
-            ahorro: 1.68,
+            ahorro: 69.17,
             imagen: 'https://www.motofichas.com/images/cache/10-yamaha-mt-07-2025-estudio-azul-01-398-a-mobile.jpg',
             cc: 689,
             tipo: 'Naked',
@@ -94,10 +100,10 @@ export class DetalleComponent implements OnInit {
                 'Asistencia en carretera 24/7'
             ],
             extrasYAccesorios: [
-                'Casco',
-                'Guantes',
-                'Equipaje',
-                'Soporte'
+                { nombre: 'Casco', icono: 'fas fa-helmet-safety' },
+                { nombre: 'Guantes', icono: 'fas fa-hand-fist' },
+                { nombre: 'Equipaje', icono: 'fas fa-suitcase' },
+                { nombre: 'Soporte', icono: 'fas fa-mobile-screen-button' }
             ],
             horaInicio: '10:00',
             horaFin: '10:00',
@@ -108,9 +114,9 @@ export class DetalleComponent implements OnInit {
             nombre: 'Kawasaki Ninja 650',
             modelo: 'Kawasaki Ninja 650',
             precio: 65.00,
-            precioBase: 65.00,
+            precioBase: 89.99,
             precioDescuento: 60,
-            ahorro: 0,
+            ahorro: 24.99,
             imagen: 'https://www.motofichas.com/images/phocagallery/Kawasaki/ninja-650-2026/10-kawasaki-ninja-650-2026-estudio-verde-01.jpg',
             cc: 649,
             tipo: 'Deportiva',
@@ -144,10 +150,10 @@ export class DetalleComponent implements OnInit {
                 'Asistencia 24/7'
             ],
             extrasYAccesorios: [
-                'Casco premium',
-                'Guantes deportivos',
-                'Maletas',
-                'Soporte de teléfono'
+                { nombre: 'Casco premium', icono: 'fas fa-helmet-safety' },
+                { nombre: 'Guantes deportivos', icono: 'fas fa-hand-fist' },
+                { nombre: 'Maletas', icono: 'fas fa-suitcase' },
+                { nombre: 'Soporte de teléfono', icono: 'fas fa-mobile-screen-button' }
             ],
             horaInicio: '09:00',
             horaFin: '21:00',
@@ -158,9 +164,9 @@ export class DetalleComponent implements OnInit {
             nombre: 'BMW F 750 GS',
             modelo: 'BMW F 750 GS',
             precio: 75.00,
-            precioBase: 75.00,
+            precioBase: 99.99,
             precioDescuento: 70,
-            ahorro: 0,
+            ahorro: 24.99,
             imagen: 'https://www.outletmoto.com/cdnassets/products/shad-anclaje-w0fs88st_l.jpg',
             cc: 853,
             tipo: 'Trail',
@@ -195,10 +201,10 @@ export class DetalleComponent implements OnInit {
                 'Maleteros'
             ],
             extrasYAccesorios: [
-                'Casco modular',
-                'Botas de moto',
-                'Chaqueta de aventura',
-                'GPS'
+                { nombre: 'Casco modular', icono: 'fas fa-helmet-safety' },
+                { nombre: 'Botas de moto', icono: 'fas fa-shoe-prints' },
+                { nombre: 'Chaqueta de aventura', icono: 'fas fa-vest' },
+                { nombre: 'GPS', icono: 'fas fa-map' }
             ],
             horaInicio: '08:00',
             horaFin: '22:00',
@@ -209,9 +215,9 @@ export class DetalleComponent implements OnInit {
             nombre: 'Triumph Street Twin',
             modelo: 'Triumph Street Twin',
             precio: 55.00,
-            precioBase: 55.00,
+            precioBase: 75.00,
             precioDescuento: 50,
-            ahorro: 0,
+            ahorro: 20.00,
             imagen: 'https://www.motoplanete.com/triumph/zoom-700px/Triumph-900-Street-Twin-2022-700px.webp',
             cc: 900,
             tipo: 'Clásica',
@@ -245,10 +251,10 @@ export class DetalleComponent implements OnInit {
                 'Asistencia 24/7'
             ],
             extrasYAccesorios: [
-                'Casco retro',
-                'Guantes vintage',
-                'Alforjas de cuero',
-                'Espejo adicional'
+                { nombre: 'Casco retro', icono: 'fas fa-helmet-safety' },
+                { nombre: 'Guantes vintage', icono: 'fas fa-hand-fist' },
+                { nombre: 'Alforjas de cuero', icono: 'fas fa-bag-shopping' },
+                { nombre: 'Espejo adicional', icono: 'fas fa-mirror' }
             ],
             horaInicio: '09:00',
             horaFin: '20:00',
@@ -259,9 +265,9 @@ export class DetalleComponent implements OnInit {
             nombre: 'Honda PCX 125',
             modelo: 'Honda PCX 125',
             precio: 38.00,
-            precioBase: 38.00,
+            precioBase: 49.99,
             precioDescuento: 35,
-            ahorro: 0,
+            ahorro: 11.99,
             imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Honda_PCX125_2011_Front.JPG/960px-Honda_PCX125_2011_Front.JPG',
             cc: 125,
             tipo: 'Scooter',
@@ -295,10 +301,10 @@ export class DetalleComponent implements OnInit {
                 'Asistencia 24/7'
             ],
             extrasYAccesorios: [
-                'Casco compacto',
-                'Bolsa de transporte',
-                'Soporte de móvil',
-                'Espejo adicional'
+                { nombre: 'Casco compacto', icono: 'fas fa-helmet-safety' },
+                { nombre: 'Bolsa de transporte', icono: 'fas fa-bag-shopping' },
+                { nombre: 'Soporte de móvil', icono: 'fas fa-mobile-screen-button' },
+                { nombre: 'Espejo adicional', icono: 'fas fa-mirror' }
             ],
             horaInicio: '07:00',
             horaFin: '23:00',
@@ -309,9 +315,9 @@ export class DetalleComponent implements OnInit {
             nombre: 'Yamaha XMAX 250',
             modelo: 'Yamaha XMAX 250',
             precio: 42.00,
-            precioBase: 42.00,
+            precioBase: 59.99,
             precioDescuento: 35,
-            ahorro: 0,
+            ahorro: 17.99,
             imagen: 'https://www.motofichas.com/images/stories/imagenes/pruebas/yamaha_xmax_250/yamaha-xmax-250-2010-2.jpg',
             cc: 250,
             tipo: 'Scooter',
@@ -345,10 +351,10 @@ export class DetalleComponent implements OnInit {
                 'Asistencia 24/7'
             ],
             extrasYAccesorios: [
-                'Casco deportivo',
-                'Bolsa de transporte grande',
-                'Soporte de móvil premium',
-                'Espejo panorámico'
+                { nombre: 'Casco deportivo', icono: 'fas fa-helmet-safety' },
+                { nombre: 'Bolsa de transporte grande', icono: 'fas fa-bag-shopping' },
+                { nombre: 'Soporte de móvil premium', icono: 'fas fa-mobile-screen-button' },
+                { nombre: 'Espejo panorámico', icono: 'fas fa-mirror' }
             ],
             horaInicio: '07:00',
             horaFin: '23:00',
@@ -359,10 +365,21 @@ export class DetalleComponent implements OnInit {
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit(): void {
+        this.generarHorasDisponibles();
         this.route.params.subscribe(params => {
             const id = Number(params['id']);
             this.moto = this.motos[id] || null;
         });
+    }
+
+    private generarHorasDisponibles(): void {
+        this.horasDisponibles = [];
+        for (let hora = 8; hora <= 22; hora++) {
+            this.horasDisponibles.push(`${hora}:00`);
+            if (hora < 22) {
+                this.horasDisponibles.push(`${hora}:30`);
+            }
+        }
     }
 
     reservarAhora(): void {
